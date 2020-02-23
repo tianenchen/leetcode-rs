@@ -13,4 +13,5 @@ pub mod cutting_rope;
 pub mod hamming_weight;
 pub mod my_pow;
 pub mod print_numbers;
-pub mod delete_node;
+pub mod remove_nth_from_end;
+mod delete_node;
