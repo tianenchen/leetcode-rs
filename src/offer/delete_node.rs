@@ -6,7 +6,7 @@ pub struct ListNode {
   pub val: i32,
   pub next: Option<Box<ListNode>>
 }
-
+#[allow(dead_code)]
 impl ListNode {
   #[inline]
   fn new(val: i32) -> Self {
@@ -17,9 +17,9 @@ impl ListNode {
   }
 }
 
-
+#[allow(dead_code)]
 impl Solution {
-    // #[cfg(feature = "unsafe")]
+    #[cfg(feature = "unsafe")]
     pub fn delete_node2(head: Option<Box<ListNode>>, val: i32) -> Option<Box<ListNode>> {
         unsafe{
             let mut head = Some(Box::new(ListNode{val:0,next:head}));
