@@ -38,3 +38,6 @@ pub mod get_least_numbers;
 mod median_finder;
 mod max_sub_array;
 pub mod find_nth_digit;
+pub mod min_number;
+mod translate_num;
+mod max_value;
