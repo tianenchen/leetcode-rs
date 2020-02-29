@@ -41,3 +41,6 @@ pub mod find_nth_digit;
 pub mod min_number;
 mod translate_num;
 mod max_value;
+mod length_of_longest_substring;
+mod nth_ugly_number;
+mod first_uniq_char;
