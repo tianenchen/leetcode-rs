@@ -48,7 +48,7 @@ impl Solution {
 
 #[test]
 fn check() {
-    let mut v = vec![1];
-    *v.last_mut().unwrap() = 11;
-    println!(" last : {}", v.last().unwrap());
+    // let mut v = vec![1];
+    // *v.last_mut().unwrap() = 11;
+    // println!(" last : {}", v.last().unwrap());
 }

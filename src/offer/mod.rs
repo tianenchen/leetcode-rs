@@ -44,3 +44,6 @@ mod max_value;
 mod length_of_longest_substring;
 mod nth_ugly_number;
 mod first_uniq_char;
+mod missing_number;
+mod reverse_pairs;
+mod search;
