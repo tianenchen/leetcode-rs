@@ -53,3 +53,8 @@ mod is_balanced;
 mod single_numbers;
 mod single_numbers2;
 mod two_sum;
+pub mod find_continuous_sequence;
+mod reverse_words;
+mod reverse_left_words;
+mod max_sliding_window;
+mod max_queue;
