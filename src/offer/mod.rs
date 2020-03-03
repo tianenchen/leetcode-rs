@@ -64,3 +64,4 @@ mod last_remaining;
 mod max_profit;
 mod sum_nums;
 mod add;
+mod construct_arr;
