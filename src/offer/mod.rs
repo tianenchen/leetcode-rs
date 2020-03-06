@@ -65,3 +65,4 @@ mod max_profit;
 mod sum_nums;
 mod add;
 mod construct_arr;
+pub mod str_to_int;
