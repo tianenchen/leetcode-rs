@@ -11,3 +11,4 @@ mod longest_palindrome;
 pub mod count_substrings;
 mod climb_stairs;
 mod inorder_traversal;
+mod generate_trees;

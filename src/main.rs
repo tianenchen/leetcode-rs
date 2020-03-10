@@ -1,5 +1,6 @@
 mod leetcode;
 mod offer;
+pub mod util;
 
 fn main() {
     offer::str_to_int::Solution::str_to_int("2147483648".to_string());

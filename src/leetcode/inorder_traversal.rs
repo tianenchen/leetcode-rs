@@ -4,7 +4,7 @@ pub struct TreeNode {
   pub left: Option<Rc<RefCell<TreeNode>>>,
   pub right: Option<Rc<RefCell<TreeNode>>>,
 }
-
+#[allow(dead_code)]
 impl TreeNode {
   #[inline]
   pub fn new(val: i32) -> Self {
@@ -18,6 +18,7 @@ impl TreeNode {
 use std::rc::Rc;
 use std::cell::RefCell;
 struct Solution;
+#[allow(dead_code)]
 impl Solution {
     pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let mut node = root;
