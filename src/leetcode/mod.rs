@@ -12,3 +12,8 @@ pub mod count_substrings;
 mod climb_stairs;
 mod inorder_traversal;
 mod generate_trees;
+mod can_three_parts_equal_sum;
+mod num_trees;
+mod is_valid_bst;
+mod gcd_of_strings;
+mod length_of_lis;

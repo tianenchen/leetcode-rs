@@ -5,6 +5,7 @@ use std::cell::RefCell;
 struct Solution;
 impl Solution {
     pub fn generate_trees(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
+		if n<= 0 {return vec![]}
 		// let mut res = vec![];
 		let mut dp :Vec<Vec<Option<Rc<RefCell<TreeNode>>>>>= vec![vec![];n as usize+1];
 		dp[0].push(None);
@@ -16,7 +17,7 @@ impl Solution {
 				for l in &left{
 					for r in &right{
 						let mut root = Some(Rc::new(RefCell::new(TreeNode::new(j as i32))));
-						root.as_mut().unwrap().borrow_mut().left = Self::add(&l.clone(), 0);
+						root.as_mut().unwrap().borrow_mut().left = l.clone();
 						root.as_mut().unwrap().borrow_mut().right = Self::add(&r.clone(), j as i32);
 						v.push(root);
 					}
