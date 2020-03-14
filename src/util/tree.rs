@@ -23,18 +23,17 @@ pub fn as_tree(v:Vec<Option<i32>>)->Option<Rc<RefCell<TreeNode>>>{
     let head = Some(Rc::new(RefCell::new(TreeNode::new(v[0].unwrap()))));
     let mut deq = std::collections::VecDeque::new();
     deq.push_back(head.as_ref().unwrap().clone());
-    for (i,children) in v[1..].iter().enumerate(){
-        if let Some(v) = children {
-            let parent = deq.pop_front().unwrap();
-            let tmp = Some(Rc::new(RefCell::new(TreeNode::new(*v))));
-            if i%2==0{
-                parent.borrow_mut().left = tmp;
-                deq.push_back(parent.borrow().left.as_ref().unwrap().clone());
-            }
-            else{
-                parent.borrow_mut().right = tmp;
-                deq.push_back(parent.borrow().right.as_ref().unwrap().clone());
-            }
+    for children in v[1..].chunks(2){
+        let parent = deq.pop_front().unwrap();
+        if let Some(v) = children[0] {
+            let tmp = Some(Rc::new(RefCell::new(TreeNode::new(v))));
+            parent.borrow_mut().left = tmp;
+            deq.push_back(parent.borrow().left.as_ref().unwrap().clone());
+        }
+        if children.len()>1 && children[1].is_some(){
+            let tmp = Some(Rc::new(RefCell::new(TreeNode::new(children[1].unwrap()))));
+            parent.borrow_mut().right = tmp;
+            deq.push_back(parent.borrow().right.as_ref().unwrap().clone());
         }
     }
     head
@@ -47,6 +46,19 @@ fn tree_test(){
         left:None,
         right:Some(Rc::new(RefCell::new(TreeNode{
             val:2,
+            left:None,
+            right:None,
+        })))
+    }))));
+    assert_eq!(as_tree(vec![Some(1),Some(2),Some(3)]),Some(Rc::new(RefCell::new(TreeNode{
+        val:1,
+        left:Some(Rc::new(RefCell::new(TreeNode{
+            val:2,
+            left:None,
+            right:None,
+        }))),
+        right:Some(Rc::new(RefCell::new(TreeNode{
+            val:3,
             left:None,
             right:None,
         })))
