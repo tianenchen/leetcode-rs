@@ -18,3 +18,8 @@ mod is_valid_bst;
 mod gcd_of_strings;
 mod length_of_lis;
 mod level_order;
+pub mod max_area_of_island;
+mod zigzag_level_order;
+mod compress_string;
+mod count_characters;
+pub mod is_rectangle_overlap;
