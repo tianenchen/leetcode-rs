@@ -23,3 +23,6 @@ mod zigzag_level_order;
 mod compress_string;
 mod count_characters;
 pub mod is_rectangle_overlap;
+mod get_least_numbers;
+mod can_measure_water;
+mod min_increment_for_unique;
