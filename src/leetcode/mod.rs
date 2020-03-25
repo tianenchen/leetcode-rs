@@ -28,3 +28,4 @@ mod can_measure_water;
 mod min_increment_for_unique;
 mod middle_node;
 mod massage;
+pub mod surface_area;
