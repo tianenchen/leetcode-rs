@@ -29,3 +29,7 @@ mod min_increment_for_unique;
 mod middle_node;
 mod massage;
 pub mod surface_area;
+mod num_rook_captures;
+mod has_groups_size_x;
+mod convert;
+mod recover_tree;
