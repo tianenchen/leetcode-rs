@@ -35,3 +35,4 @@ mod convert;
 mod recover_tree;
 mod minimum_length_encoding;
 mod build_tree;
+mod sorted_array_to_bst;
