@@ -33,3 +33,5 @@ mod num_rook_captures;
 mod has_groups_size_x;
 mod convert;
 mod recover_tree;
+mod minimum_length_encoding;
+mod build_tree;

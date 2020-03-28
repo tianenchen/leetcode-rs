@@ -11,7 +11,7 @@ impl Solution {
         Self::help(root, &mut sorted);
         let mut x = None;
         let mut y = None;
-        for (i,node) in sorted[0..sorted.len()-1].iter().enumerate(){
+        for (i,node) in sorted[0..sorted.len()-1].iter().enumerate(){//O(n) 查找两个交换值
             if sorted[i+1].borrow().val < node.borrow().val{
                 y = Some(sorted[i+1].clone());
                 if x.is_none(){
