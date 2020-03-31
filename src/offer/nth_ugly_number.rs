@@ -3,15 +3,21 @@ struct Solution;
 impl Solution {
     pub fn nth_ugly_number(n: i32) -> i32 {
         let n = n as usize;
-        let mut dp = vec![1;n];
-        let (mut p2,mut p3,mut p5) = (0,0,0);
-        for i in 1..n{
-            dp[i] = std::cmp::min(dp[p2]*2,std::cmp::min(dp[p3]*3,dp[p5]*5));
-            if dp[i] == dp[p2]*2 {p2+=1}
-            if dp[i] == dp[p3]*3 {p3+=1}
-            if dp[i] == dp[p5]*5 {p5+=1}
+        let mut dp = vec![1; n];
+        let (mut p2, mut p3, mut p5) = (0, 0, 0);
+        for i in 1..n {
+            dp[i] = std::cmp::min(dp[p2] * 2, std::cmp::min(dp[p3] * 3, dp[p5] * 5));
+            if dp[i] == dp[p2] * 2 {
+                p2 += 1
+            }
+            if dp[i] == dp[p3] * 3 {
+                p3 += 1
+            }
+            if dp[i] == dp[p5] * 5 {
+                p5 += 1
+            }
         }
-        dp[n-1]
+        dp[n - 1]
     }
 }
 

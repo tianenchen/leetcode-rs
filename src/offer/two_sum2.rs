@@ -1,6 +1,5 @@
 struct Solution;
 
-
 impl Solution {
     pub fn two_sum(n: i32) -> Vec<f64> {
         vec![]

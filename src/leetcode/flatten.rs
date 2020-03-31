@@ -1,7 +1,7 @@
 use crate::util::tree::*;
 
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 struct Solution;
 impl Solution {
     // pub fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {

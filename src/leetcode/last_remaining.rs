@@ -5,7 +5,7 @@ impl Solution {
         if n == 1 {
             return 0;
         }
-        let x = Self::last_remaining(n-1,m);
-        (x%n+m)%n
+        let x = Self::last_remaining(n - 1, m);
+        (x % n + m) % n
     }
 }

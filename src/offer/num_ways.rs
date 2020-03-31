@@ -16,11 +16,14 @@ impl Solution {
         //         res
         //     }
         // }
-        if n == 0{return 1}
-        else if n < 3 {return n}
-        let (mut a, mut b) = (1,2);
+        if n == 0 {
+            return 1;
+        } else if n < 3 {
+            return n;
+        }
+        let (mut a, mut b) = (1, 2);
         let mut t;
-        for _ in 3..=n{
+        for _ in 3..=n {
             t = a;
             a = b;
             b += t;
@@ -32,8 +35,7 @@ impl Solution {
     }
 }
 
-
 #[test]
 fn check() {
-    assert_eq!(Solution::num_ways(7),21);
+    assert_eq!(Solution::num_ways(7), 21);
 }

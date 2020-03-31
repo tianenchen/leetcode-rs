@@ -3,7 +3,7 @@ mod offer;
 pub mod util;
 
 fn main() {
-    leetcode::surface_area::Solution::surface_area(vec![vec![1,1],vec![1,1]]);
+    leetcode::surface_area::Solution::surface_area(vec![vec![1, 1], vec![1, 1]]);
     // leetcode::is_rectangle_overlap::Solution::is_rectangle_overlap(vec![229,-132,833,333], vec![-244,-577,837,804]);
     // leetcode::build_tree::Solution::build_tree(vec![3,9,20,15,7], vec![9,3,15,20,7]);
     // leetcode::max_area_of_island::Solution::max_area_of_island(vec![vec![0,1]]);
@@ -17,4 +17,3 @@ fn main() {
     // offer::spiral_order::Solution::spiral_order(vec![vec![3],vec![2]]);
     println!("Hello, world!");
 }
-

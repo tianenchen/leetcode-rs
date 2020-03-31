@@ -5,26 +5,26 @@ impl Solution {
     pub fn is_match(s: String, p: String) -> bool {
         let s = s.chars().collect::<Vec<char>>();
         let p = p.chars().collect::<Vec<char>>();
-        Self::help(&s,&p)
+        Self::help(&s, &p)
     }
 
-    fn help(s:&[char],p:&[char])->bool{
-        if p.is_empty() {return s.is_empty()}
-        let first_match = !s.is_empty()&&(s[0]==p[0]||p[0]=='.');//判断当前字符是否相等
-        if p.len()>1 && p[1] =='*'{
-            Self::help(&s,&p[2..])||(first_match && Self::help(&s[1..],&p))//砍掉p两个字符（0个匹配）或者砍掉s一个字符
+    fn help(s: &[char], p: &[char]) -> bool {
+        if p.is_empty() {
+            return s.is_empty();
         }
-        else{
-            first_match && Self::help(&s[1..], &p[1..])//直接匹配
+        let first_match = !s.is_empty() && (s[0] == p[0] || p[0] == '.'); //判断当前字符是否相等
+        if p.len() > 1 && p[1] == '*' {
+            Self::help(&s, &p[2..]) || (first_match && Self::help(&s[1..], &p)) //砍掉p两个字符（0个匹配）或者砍掉s一个字符
+        } else {
+            first_match && Self::help(&s[1..], &p[1..]) //直接匹配
         }
     }
 }
 
 #[test]
 fn check() {
-    assert_eq!(Solution::is_match("ab".to_string(),".*".to_string()),true);
+    assert_eq!(Solution::is_match("ab".to_string(), ".*".to_string()), true);
 }
-
 
 /*
 示例 1:

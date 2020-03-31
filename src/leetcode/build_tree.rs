@@ -1,25 +1,45 @@
 use crate::util::tree::*;
 
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 struct Solution;
 
 impl Solution {
     pub fn build_tree(inorder: Vec<i32>, postorder: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
-        Self::help(0,inorder.len(), 0, postorder.len(), &inorder,&postorder)
+        Self::help(0, inorder.len(), 0, postorder.len(), &inorder, &postorder)
     }
-    fn help(il:usize,ir:usize,pl:usize,pr:usize,inorder: &Vec<i32>, postorder: &Vec<i32>)->Option<Rc<RefCell<TreeNode>>>{
-        if il<ir && pl<pr{
-            let root = postorder[pr-1];
-            let root_idx_in_inorder = inorder.iter().position(|x|*x==root).unwrap();
+    fn help(
+        il: usize,
+        ir: usize,
+        pl: usize,
+        pr: usize,
+        inorder: &Vec<i32>,
+        postorder: &Vec<i32>,
+    ) -> Option<Rc<RefCell<TreeNode>>> {
+        if il < ir && pl < pr {
+            let root = postorder[pr - 1];
+            let root_idx_in_inorder = inorder.iter().position(|x| *x == root).unwrap();
             let left_tree_len = root_idx_in_inorder - il;
-            Some(Rc::new(RefCell::new(TreeNode{
-                val:root,
-                left:Self::help(il,root_idx_in_inorder,pl,pl+left_tree_len,inorder,postorder),
-                right:Self::help(root_idx_in_inorder+1,ir,pl+left_tree_len,pr-1,inorder,postorder),
+            Some(Rc::new(RefCell::new(TreeNode {
+                val: root,
+                left: Self::help(
+                    il,
+                    root_idx_in_inorder,
+                    pl,
+                    pl + left_tree_len,
+                    inorder,
+                    postorder,
+                ),
+                right: Self::help(
+                    root_idx_in_inorder + 1,
+                    ir,
+                    pl + left_tree_len,
+                    pr - 1,
+                    inorder,
+                    postorder,
+                ),
             })))
-        }
-        else{
+        } else {
             None
         }
     }

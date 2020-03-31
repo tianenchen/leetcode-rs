@@ -1,31 +1,31 @@
 // Definition for a binary tree node.
 // #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
-  pub val: i32,
-  pub left: Option<Rc<RefCell<TreeNode>>>,
-  pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub val: i32,
+    pub left: Option<Rc<RefCell<TreeNode>>>,
+    pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
 impl TreeNode {
-  #[inline]
-  pub fn new(val: i32) -> Self {
-    TreeNode {
-      val,
-      left: None,
-      right: None
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        TreeNode {
+            val,
+            left: None,
+            right: None,
+        }
     }
-  }
 }
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 struct Solution;
 impl Solution {
     pub fn codec(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<String> {
         let mut stat = vec![root];
         let mut res = vec![];
-        while !stat.is_empty(){
+        while !stat.is_empty() {
             let mut next_stat = vec![];
-            stat.iter().for_each(|node|{
+            stat.iter().for_each(|node| {
                 if let Some(node) = node {
                     res.push(Some(node.borrow().val));
                     next_stat.push(node.borrow().left.clone());
@@ -34,12 +34,14 @@ impl Solution {
             });
             stat = next_stat;
         }
-        res.iter().map(|i|{
-            if let Some(i) = i {
-                i.to_string()
-            }else{
-                "null".to_string()
-            }
-        }).collect::<Vec<_>>()
+        res.iter()
+            .map(|i| {
+                if let Some(i) = i {
+                    i.to_string()
+                } else {
+                    "null".to_string()
+                }
+            })
+            .collect::<Vec<_>>()
     }
 }
