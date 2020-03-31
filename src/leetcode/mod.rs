@@ -36,3 +36,8 @@ mod recover_tree;
 mod minimum_length_encoding;
 mod build_tree;
 mod sorted_array_to_bst;
+mod max_distance;
+mod path_sum;
+mod flatten;
+mod last_remaining;
+mod sort_array;
