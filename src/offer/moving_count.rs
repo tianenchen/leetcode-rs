@@ -5,14 +5,7 @@ struct Solution;
 #[allow(dead_code)]
 impl Solution {
     pub fn moving_count(m: i32, n: i32, k: i32) -> i32 {
-        let mut visited = vec![];
-        for _ in 0..m {
-            let mut line = vec![];
-            for _ in 0..n {
-                line.push(false);
-            }
-            visited.push(line);
-        }
+        let mut visited = vec![vec![false; n as usize]; m as usize];
         let mut step = 0;
         Self::dfs(m, n, k, 0, 0, &mut step, &mut visited);
         step

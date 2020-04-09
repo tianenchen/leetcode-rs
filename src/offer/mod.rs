@@ -13,6 +13,7 @@ pub mod find_nth_digit;
 pub mod find_number_in2_d_array;
 pub mod find_repeat_number;
 mod first_uniq_char;
+mod generate_parenthesis;
 mod get_kth_from_end;
 pub mod get_least_numbers;
 pub mod hamming_weight;
