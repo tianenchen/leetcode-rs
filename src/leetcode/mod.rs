@@ -55,3 +55,5 @@ mod twitter;
 mod two_sum;
 mod update_matrix;
 mod zigzag_level_order;
+mod get_max_repetitions;
+mod num_islands;
