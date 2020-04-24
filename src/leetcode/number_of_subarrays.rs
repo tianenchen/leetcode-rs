@@ -7,7 +7,7 @@ impl Solution {
         let (mut left, mut right) = (0, 0);
         let mut res = 0;
         loop {
-            dbg!(left, right, count, res);
+            // dbg!(left, right, count, res);
             if count < k && right < len {
                 if nums[right] % 2 == 1 {
                     count += 1;
