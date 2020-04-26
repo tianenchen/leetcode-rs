@@ -65,3 +65,5 @@ mod update_matrix;
 mod valid_mountain_array;
 mod ways_to_change;
 mod zigzag_level_order;
+mod permute;
+mod merge_k_lists;
