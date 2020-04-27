@@ -67,3 +67,7 @@ mod ways_to_change;
 mod zigzag_level_order;
 mod permute;
 mod merge_k_lists;
+mod min_subsequence;
+mod largest_perimeter;
+mod search;
+mod remove_duplicates;
