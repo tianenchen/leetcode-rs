@@ -1,7 +1,7 @@
 struct Solution;
 
 impl Solution {
-    pub fn single_numbers(nums: Vec<i32>) -> Vec<i32> {
+    pub fn single_numbers2(nums: Vec<i32>) -> Vec<i32> {
         let mut set = std::collections::HashSet::new();
         for i in nums {
             if set.contains(&i) {
@@ -13,25 +13,44 @@ impl Solution {
         set.into_iter().collect::<Vec<i32>>()
     }
 
-    fn get_single_numbers_by_xor(nums: Vec<i32>) -> Vec<i32> {
+    // fn get_single_numbers_by_xor(nums: Vec<i32>) -> Vec<i32> {
+    //     let mut xor = 0;
+    //     for i in &nums {
+    //         xor ^= *i;
+    //     }
+    //     // let m = xor & -xor;
+    //     let m = {
+    //         let mut count = 1;
+    //         while xor & count != count {
+    //             count <<= 1;
+    //         }
+    //         count
+    //     };
+    //     let mut res = vec![0; 2];
+    //     for i in nums {
+    //         if m & i == 0 {
+    //             res[0] ^= i;
+    //         } else {
+    //             res[1] ^= i;
+    //         }
+    //     }
+    //     res
+    // }
+    pub fn single_numbers(nums: Vec<i32>) -> Vec<i32> {
         let mut xor = 0;
-        for i in &nums {
-            xor ^= *i;
+        for n in &nums {
+            xor ^= *n;
         }
-        // let m = xor & -xor;
-        let m = {
-            let mut count = 1;
-            while xor & count != count {
-                count <<= 1;
-            }
-            count
-        };
-        let mut res = vec![0; 2];
-        for i in nums {
-            if m & i == 0 {
-                res[0] ^= i;
+        let mut cur = 1;
+        while xor & cur != cur {
+            cur <<= 1;
+        }
+        let mut res = vec![0, 0];
+        for n in nums {
+            if n & cur == cur {
+                res[0] ^= n;
             } else {
-                res[1] ^= i;
+                res[1] ^= n;
             }
         }
         res
