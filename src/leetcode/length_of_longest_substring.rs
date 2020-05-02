@@ -20,12 +20,29 @@ impl Solution {
         }
         res as i32
     }
+
+    pub fn length_of_longest_substring2(s: String) -> i32 {
+        let (mut head, mut tail) = (0, 0);
+        let mut set = std::collections::HashSet::new();
+        let cs = s.chars().collect::<Vec<char>>();
+        let mut max = 0;
+        while tail < cs.len() {
+            while set.contains(&cs[tail]) {
+                set.remove(&cs[head]);
+                head += 1;
+            }
+            set.insert(cs[tail]);
+            tail += 1;
+            max = std::cmp::max(set.len(), max);
+        }
+        max as i32
+    }
 }
 
 #[test]
 fn check() {
     assert_eq!(
-        Solution::length_of_longest_substring("abcdeffg".to_string()),
+        Solution::length_of_longest_substring2("abcdeffg".to_string()),
         6
     );
 }
