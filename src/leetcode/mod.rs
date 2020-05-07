@@ -75,3 +75,5 @@ mod update_matrix;
 mod valid_mountain_array;
 mod ways_to_change;
 mod zigzag_level_order;
+mod is_subtree;
+mod is_unique;
