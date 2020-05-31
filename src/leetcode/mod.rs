@@ -82,6 +82,11 @@ mod update_matrix;
 mod valid_mountain_array;
 mod ways_to_change;
 mod zigzag_level_order;
+<<<<<<< HEAD
 mod longest_ones;
 mod find_max_consecutive_ones;
 mod is_symmetric;
+=======
+mod is_subtree;
+mod is_unique;
+>>>>>>> e3d8b441aeb4814333e011b30461d5c0f8d96edb
