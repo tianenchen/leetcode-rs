@@ -12,6 +12,7 @@ mod contains_nearby_almost_duplicate;
 mod convert;
 mod count_characters;
 pub mod count_substrings;
+mod find_max_consecutive_ones;
 mod find_median_sorted_arrays;
 mod fizz_buzz;
 mod flatten;
@@ -27,6 +28,9 @@ mod inorder_traversal;
 mod intersection;
 mod is_happy;
 pub mod is_rectangle_overlap;
+mod is_subtree;
+mod is_symmetric;
+mod is_unique;
 mod is_valid_bst;
 mod largest_perimeter;
 mod last_remaining;
@@ -34,6 +38,7 @@ mod length_of_lis;
 mod length_of_longest_substring;
 mod level_order;
 mod lfu_cache;
+mod longest_ones;
 mod longest_palindrome;
 mod massage;
 mod max_area;
@@ -82,11 +87,4 @@ mod update_matrix;
 mod valid_mountain_array;
 mod ways_to_change;
 mod zigzag_level_order;
-<<<<<<< HEAD
-mod longest_ones;
-mod find_max_consecutive_ones;
-mod is_symmetric;
-=======
-mod is_subtree;
-mod is_unique;
->>>>>>> e3d8b441aeb4814333e011b30461d5c0f8d96edb
+mod array_strings_are_equal;
