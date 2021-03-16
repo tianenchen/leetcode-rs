@@ -82,6 +82,7 @@ mod sort_array;
 mod sorted_array_to_bst;
 mod sum_of_left_leaves;
 pub mod surface_area;
+mod tictactoe;
 mod trap;
 mod twitter;
 mod two_sum;
