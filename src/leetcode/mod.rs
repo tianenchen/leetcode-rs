@@ -1,5 +1,7 @@
 mod add_two_numbers;
 mod add_two_numbers2;
+mod alert_names;
+mod array_strings_are_equal;
 mod best_stock;
 mod binary_tree_paths;
 mod build_tree;
@@ -87,4 +89,3 @@ mod update_matrix;
 mod valid_mountain_array;
 mod ways_to_change;
 mod zigzag_level_order;
-mod array_strings_are_equal;
